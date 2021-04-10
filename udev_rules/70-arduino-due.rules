@@ -1,0 +1,6 @@
+# create symlinks and set permissions on device connection
+# /lib/udev/rules.d/70-arduino-due.rules
+# update rules with: udevadm control --reload-rules
+
+SUBSYSTEMS=="usb", ATTRS{idProduct}=="003d", ATTRS{idVendor}=="2341", SYMLINK+="arduino_due", MODE="0666"
+SUBSYSTEMS=="usb", ATTRS{idProduct}=="003e", ATTRS{idVendor}=="2341", SYMLINK+="arduino_due_host" MODE="0666"
